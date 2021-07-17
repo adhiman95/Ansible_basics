@@ -1,0 +1,12 @@
+--- # This is My Third Playbook, LETS Goo!!
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks: 
+          - name: install HTTPD Service in Worker Nodes
+            action: yum name=httpd state=installed
+            notify: restart httpd
+  handlers:
+          - name: restart httpd
+            action: service name=httpd state=restarted

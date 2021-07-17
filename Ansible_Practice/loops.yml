@@ -1,0 +1,14 @@
+--- # Below is the sample for LOOP
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+        - name: Create users in all worker nodes
+          user: name='{{item}}' state=present
+          with_items:
+                    - Chandler_Bing
+                    - Umang_Kalra
+                    - Kabir_Rawat
+                    - Ayushmannk
+                    - Kay_Sean

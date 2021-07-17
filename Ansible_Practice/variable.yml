@@ -1,0 +1,11 @@
+--- # This is MY Second Playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+  vars:
+          pkgname: docker
+  tasks:
+          - name: install COWSAY in each worker node
+            action: yum name='{{pkgname}}' state=installed
