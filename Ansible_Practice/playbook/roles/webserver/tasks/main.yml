@@ -1,0 +1,2 @@
+- name: install httpd server on nodes
+  yum: pkg=httpd state=latest

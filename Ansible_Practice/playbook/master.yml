@@ -1,0 +1,6 @@
+- hosts: demo
+  become: yes
+  user: ansible
+  connection: ssh
+  roles:
+        - webserver
